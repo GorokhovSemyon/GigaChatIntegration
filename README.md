@@ -12,7 +12,7 @@
 1) Склонировать репозиторий
 > git clone https://github.com/GorokhovSemyon/GigaChatIntegration
 2) Предустановить сертификаты минцифры
-3) Получить Client ID и Client Secret по данной ссылке -> [API](https://developers.sber.ru/portal/products/gigachat-api)
+3) Получить Client ID и Client Secret зарегестрировавшись/авторизировавшись по данной ссылке -> [API](https://developers.sber.ru/portal/products/gigachat-api)
 4) Добавить сгенерированные ID и Secret в переменные среды текущего пользователя
 5) Установить всё необходимое для запуска в (виртуальном) окружении
 > pip install -r ./requirements.txt
