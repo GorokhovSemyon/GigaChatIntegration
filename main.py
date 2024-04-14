@@ -76,7 +76,6 @@ class GigaChatIntegration:
     def get_chat_answer(self, user_message):
         """
             Отправляет POST-запрос к API чата для получения ответа от модели GigaChat
-            :param conversation_history: возможная история диалога в формате {"role": "", "content" : ""}
             :param user_message: сообщение от пользователя
             :return: ответ от API в виде текстовой строки
         """
@@ -103,7 +102,7 @@ class GigaChatIntegration:
         headers = {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'Authorization': f'Bearer {self.giga_token}' # Токен чата
+            'Authorization': f'Bearer {self.giga_token}'  # Токен чата
         }
 
         # Выполнение POST-запроса и возвращение ответа
@@ -130,7 +129,6 @@ class GigaChatIntegration:
     def get_aswer_with_prompt(self):
         """
             Отправляет POST-запрос к API чата для получения ответа от модели GigaChat
-            :param user_message: сообщение от пользователя, которое необходимо суммаризовать
             :return: суммаризованный текст
         """
         # URL API
