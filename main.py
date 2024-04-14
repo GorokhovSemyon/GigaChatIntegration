@@ -9,7 +9,7 @@ class GigaChatIntegration:
     """
         Класс взаимодействия с GigaChat по API
     """
-    def __init__(self):
+    def __init__(self, conversation_history=None):
         """
             Инициализация класса взаимодействия с GigaChat по API
         """
@@ -21,7 +21,7 @@ class GigaChatIntegration:
         self.giga_models = None
         self.last_response = None
         self.response_data = None
-        self.conversation_history = []
+        self.conversation_history = conversation_history if conversation_history else []
 
     def get_token(self, scope='GIGACHAT_API_PERS'):
         """
@@ -73,7 +73,7 @@ class GigaChatIntegration:
 
         self.giga_models = response.json()["data"]
 
-    def get_chat_answer(self, user_message, conversation_history=None):
+    def get_chat_answer(self, user_message):
         """
             Отправляет POST-запрос к API чата для получения ответа от модели GigaChat
             :param conversation_history: возможная история диалога в формате {"role": "", "content" : ""}
@@ -82,9 +82,6 @@ class GigaChatIntegration:
         """
         # URL API
         url = "https://gigachat.devices.sberbank.ru/api/v1/chat/completions"
-
-        if conversation_history:
-            self.conversation_history.append(conversation_history)
 
         self.conversation_history.append({
             "role": "user",
@@ -125,7 +122,12 @@ class GigaChatIntegration:
             print(f"Произошла ошибка: {str(e)}")
             return None, self.conversation_history
 
-    def get_text_summarization(self, user_message):
+    def conversation(self, user_message):
+        while user_message != 'q':
+            self.get_chat_answer(user_message)
+            user_message = input()
+
+    def get_aswer_with_prompt(self):
         """
             Отправляет POST-запрос к API чата для получения ответа от модели GigaChat
             :param user_message: сообщение от пользователя, которое необходимо суммаризовать
@@ -134,9 +136,15 @@ class GigaChatIntegration:
         # URL API
         url = "https://gigachat.devices.sberbank.ru/api/v1/chat/completions"
 
+        print("Введите промпт для применения к последующему тексту")
+        prompt = input()
+
+        print("Введите текст")
+        user_message = input()
+
         self.conversation_history = [{
             'role': 'system',
-            'content': f'Твоя задача - пересказать это одним предложением, в котором не более 10 слов: {user_message}'
+            'content': f'{prompt}: {user_message}'
         }]
 
         payload = json.dumps({
@@ -175,4 +183,11 @@ if __name__ == "__main__":
     GCI = GigaChatIntegration()
     GCI.get_token()
     GCI.get_models()
-    GCI.get_text_summarization(input())
+    print("1 - формат ответа на задачу\n"
+          "2 - формат беседы с GPT")
+    choice = input()
+    if choice == '1':
+        GCI.get_aswer_with_prompt()
+    elif choice == '2':
+        print('О чём поговорим? (для выхода отправьте "q")')
+        GCI.conversation(input())
