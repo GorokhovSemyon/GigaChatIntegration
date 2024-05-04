@@ -11,12 +11,14 @@
 ## How to use
 
 1) Склонировать репозиторий 
-  > git clone https://github.com/GorokhovSemyon/GigaChatIntegration
+
+``` git clone https://github.com/GorokhovSemyon/GigaChatIntegration```
 2) Предустановить сертификаты минцифры
 3) Получить Client ID и Client Secret зарегестрировавшись/авторизировавшись по данной ссылке -> [API](https://developers.sber.ru/portal/products/gigachat-api)
 4) Добавить полученные ключи, как "ClientID" и "ClientSecret" соответственно в переменные среды текущего пользователя
 5) Установить всё необходимое для запуска в (виртуальном) окружении
-> pip install -r ./requirements.txt
+
+``` pip install -r ./requirements.txt```
 6) Запустить main.py, выбрать формат решения конкретной задачи(`1`)/моделировать контекст последовательно(`2`), либо выбрать опцию открытия веб-интерфейса(`3`)
 
 ## Веб интерфейс
