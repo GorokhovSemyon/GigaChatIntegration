@@ -10,7 +10,7 @@
  
 ## How to use
 
-1) Склонировать репозиторий 
+1) Склонировать
 
 ``` git clone https://github.com/GorokhovSemyon/GigaChatIntegration```
 
