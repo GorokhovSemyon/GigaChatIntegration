@@ -12,7 +12,7 @@ if __name__ == "__main__":
     if choice == '1':
         print(GCI.get_aswer_with_prompt())
     elif choice == '2':
-        print('О чём поговорим? (для выхода отправьте "q")')
+        print('О чём поговорим? ("q" - выход)')
         print(GCI.conversation(input()))
     elif choice == '3':
         os.system(f"streamlit run {os.path.abspath('WebInterface.py')}")
