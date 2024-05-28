@@ -12,7 +12,7 @@
 
 1) Склонировать
 
-``` git clone https://github.com/GorokhovSemyon/GigaChatIntegration```
+```git clone https://github.com/GorokhovSemyon/GigaChatIntegration```
 
 2) Предустановить сертификаты минцифры, либо отключить их проверку
 3) Получить Client ID и Client Secret зарегестрировавшись/авторизировавшись по данной ссылке -> [API](https://developers.sber.ru/portal/products/gigachat-api)
