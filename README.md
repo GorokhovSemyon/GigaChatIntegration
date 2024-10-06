@@ -1,7 +1,6 @@
 # GigaChatIntegration
 
-![image](https://uptu.work/wp-content/uploads/2023/07/i.jpeg)
-> Реализация задачи суммаризации путём интеграции с [GigaChat](https://developers.sber.ru/help/gigachat) через API.
+> Реализация задачи интеграции [GigaChat](https://developers.sber.ru/help/gigachat) через API.
 
 - Python 3.7+
   - python-certifi-win32
