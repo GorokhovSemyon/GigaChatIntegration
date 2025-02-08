@@ -1,6 +1,6 @@
 # GigaChatIntegration
 
-> Реализация задачи интеграции [GigaChat](https://developers.sber.ru/help/gigachat) через API.
+> Реализация интеграции [GigaChat](https://developers.sber.ru/help/gigachat) через API.
 
 - Python 3.7+
   - python-certifi-win32
