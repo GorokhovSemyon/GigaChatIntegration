@@ -30,5 +30,5 @@
 ### Формат ответа на задачу
 ![image](images/Answer_with_prompt.png)
 
-### Формат беседы с GPT
+### Формат беседы
 ![image](images/Dialog.png)
