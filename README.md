@@ -7,7 +7,7 @@
   - requests
   - streamlit
  
-## How to use
+## Использование
 
 1) Склонировать
 
