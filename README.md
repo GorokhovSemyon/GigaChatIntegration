@@ -2,7 +2,7 @@
 
 > Реализация интеграции [GigaChat](https://developers.sber.ru/help/gigachat) через API.
 
-- Python 3.8+
+- Python 3.10+
   - python-certifi-win32
   - requests
   - streamlit
