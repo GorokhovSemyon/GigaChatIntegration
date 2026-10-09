@@ -2,6 +2,7 @@ import os
 from GigaChatIntagration import GigaChatIntegration
 
 
+
 if __name__ == "__main__":
     GCI = GigaChatIntegration()
     GCI.get_token()
